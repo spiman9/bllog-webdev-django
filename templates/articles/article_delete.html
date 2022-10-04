@@ -1,0 +1,77 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- <h3>Danger : Blog will be Deleted Forever</h3>
+    <form action="." method="POST"> {% csrf_token %}
+        <h1>Do you want to delete the post " {{ object.title }}}"</h1>
+        <p><input type="submit" value = 'Yes '> <a href="../../blog/">Cancel</a></p>
+    </form> -->
+
+
+    <div class="main-block">
+        <div class="child-block">
+            <div class="header">
+                <h3>Delete Blog Permently ?</h3>
+            </div>
+            <form action="." method="POST"> {% csrf_token %}
+                <b style="font-size: 20px;">Once you delete a Page, you will not be able to get it back.</b><br><br>
+                <h3>Are you sure you want to delete " <span style="color: red; text-decoration: underline ;">{{ object.title }}</span>"</h3>
+        </div>
+        <div class="sub">
+            <p><input type="submit" value='Yes' class="btn btn-danger">
+                <a href="../../" class="btn btn-dark">Cancel</a></p>
+        </div>
+        </form>
+    </div>
+</div>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .container {
+        margin-top: 100px;
+        padding-top: 30px;
+        background-color: black;
+        /* width: 70vw;
+        height: 80vw; */
+    }
+
+
+    .main-block {
+        background-color: grey;
+        border: 2px solid white;
+        padding: 6px;
+    }
+    .child-block{
+        background-color: white;
+        border: 2px solid rgb(249, 4, 4);
+    }
+    .header {
+        background-color: rgb(7, 166, 234);
+        border: 2px solid rgb(194, 55, 55);
+        padding: 10px;
+        padding-top: 20px;
+    }
+    .sub{
+        background-color: rgb(183, 227, 236);padding-top: 10px;
+        padding-left: 750px;
+        justify-content: space-around;
+        padding-bottom: 20px;
+        margin-top: 6px;
+    }
+    .sub a{
+        margin-left: 40px;
+        padding: 20px 40px;
+    }
+    form{
+        height: 150px;
+        padding: 20px 20px;
+    }
+    .sub input{
+        padding: 20px 45px;
+        font-weight: bolder;
+    }
+</style>
+{% endblock %}

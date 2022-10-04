@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div class="container">
+    <div class="about">
+        <h1 class="animate__animated animate__heartBeat">About Me </h1>
+        <br>
+        <h2>( Hover down to know about me &#128514 )</h2>
+        <br>
+        <div class="aboutme">
+            <br>
+            <!-- {% load static %} -->
+            <img src="{% static '/Images/pritham_about.jpg' %}" alt="picc Not Found" id="picc">
+            <!-- <img src="static/Images/1652349892746.jpg" alt="" id="picc"> -->
+            <h3>PBG</h3>
+            <strong>Pritham Baswani Giryalkar</strong>
+            <br>
+            <br>
+            <p>Programming has always been an interest in my life. I am technology enthusiast pursuing a bachelor in computer science and Engineering. I believe in the thought that the things that challenge you are the ones that improves you. I am looking forward to learning new skills that will both enrich and help me grow. </p>
+        </div>
+        <br>
+    </div>
+</div>
+<style>
+
+
+.aboutme{
+    width: 20vw;
+    height: 70vh;
+    border: 1.5px solid black;
+    padding-top: 15px;
+    margin-left: 371px;
+    margin-top: 28px;
+    border-radius: 20px;
+    color: black;
+}
+.aboutme:hover{
+    border: 3px solid white;
+    color: white;
+    background-color: black;
+    transition: all 5s;
+}
+
+#picc{
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.aboutme{
+    padding: 0px 15px;
+    line-height: 22px;
+}
+
+.about h1{
+    letter-spacing: 5px;
+    margin-top: 15px;
+    margin-left: 418px;
+    height: 5px;
+    color: aqua;
+    font-size: 30px;
+}
+.about h2{
+    letter-spacing: 5px;
+    margin-top: 15px;
+    margin-left: 280px;
+    height: 5px;
+    color: aqua;
+    font-size: 30px;
+}
+
+body{
+    background-color: black;
+}
+</style>
+{% endblock %}

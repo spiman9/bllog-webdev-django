@@ -14,7 +14,7 @@
         <hr>
         <div class="allblogs">
             {% for instance in object_list %}
-            <h3 class="title-space">{{ instance.id }} - <a class='a-style1'
+            <h3 class="title-space">{{ forloop.counter }} - <a class='a-style1'
                     href="{{ instance.get_absolute_url }}">{{instance.title }}</a></h3>
             <hr>
             {% endfor %}

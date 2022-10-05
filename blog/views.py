@@ -1,4 +1,5 @@
 
+from email import message
 from django.urls import reverse
 from django.shortcuts import render , get_object_or_404
 
@@ -31,6 +32,7 @@ class ArticleUpdateView(UpdateView):
     def form_valid(self , form):
         form.save()
         print(form.cleaned_data)
+        messages.success(self.request, "Blog Updated Successfully !!!" )
         return super().form_valid(form)
 
     def get_object(self):
@@ -47,6 +49,7 @@ class ArticleCreateView(CreateView):
     def form_valid(self , form):
         form.save()
         print(form.cleaned_data)
+        messages.success(self.request, "Blog Created Successfully !!!" )
         return super().form_valid(form)
 
 

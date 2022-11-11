@@ -5,74 +5,83 @@
 <div class="container">
     <div class="about">
         <h1 class="animate__animated animate__heartBeat">About Me </h1>
-        <br>
-        <h2>( Hover down to know about me &#128514 )</h2>
-        <br>
-        <div class="aboutme">
-            <br>
-            <!-- {% load static %} -->
-            <img src="{% static '/Images/pritham_about.jpg' %}" alt="picc Not Found" id="picc">
-            <!-- <img src="static/Images/1652349892746.jpg" alt="" id="picc"> -->
-            <h3>PBG</h3>
-            <strong>Pritham Baswani Giryalkar</strong>
-            <br>
-            <br>
-            <p>Programming has always been an interest in my life. I am technology enthusiast pursuing a bachelor in computer science and Engineering. I believe in the thought that the things that challenge you are the ones that improves you. I am looking forward to learning new skills that will both enrich and help me grow. </p>
+        <div class="mycontent">
+            <div class="img_me">
+                {% load static %}
+                <img src="{% static 'img/PBG.jpg' %}" alt="" width="400px">
+            </div>
+            <div class="aboutself">
+                <h3>PBG - Pritham Baswani Giryalkar <br><br>
+                ( Professional Software Engineer )</h3>
+                Programming has always been an interest in my life. I am technology enthusiast pursuing a bachelor in computer science and Engineering. I believe in the thought that the things that challenge you are the ones that improves you. I am looking forward to learning new skills that will both enrich and help me grow. I have good problem solving skills, good at coding and likes exploring the new things. I am Team-oriented personality, dedicated team player and enjoys working closely with others. With Excellent writing and verbal communication skills. Believes in the strategy of learning and applying.
+                <br><br><br>
+                <div class="skills">          
+                        <h2>Professional Skills</h2>
+                            1. C  <br>
+                            2. C++ <br>
+                            3. Java <br>
+                            4. Django <br>
+                            5. HTML <br>
+                            6. CSS <br>
+                            7. Python <br>
+                            8. Github <br>
+                            9. Git <br>
+
+                </div>
+            </div>
         </div>
-        <br>
     </div>
 </div>
 <style>
 
 
-.aboutme{
-    width: 20vw;
-    height: 70vh;
-    border: 1.5px solid black;
-    padding-top: 15px;
-    margin-left: 371px;
-    margin-top: 28px;
-    border-radius: 20px;
-    color: black;
-}
-.aboutme:hover{
-    border: 3px solid white;
-    color: white;
-    background-color: black;
-    transition: all 5s;
-}
-
-#picc{
-    height: 200px;
-    width: 200px;
-    border: 1px solid white;
-    border-radius: 10px;
-}
-
-.aboutme{
-    padding: 0px 15px;
-    line-height: 22px;
-}
-
-.about h1{
-    letter-spacing: 5px;
-    margin-top: 15px;
-    margin-left: 418px;
-    height: 5px;
-    color: aqua;
-    font-size: 30px;
-}
-.about h2{
-    letter-spacing: 5px;
-    margin-top: 15px;
-    margin-left: 280px;
-    height: 5px;
-    color: aqua;
-    font-size: 30px;
-}
-
 body{
     background-color: black;
 }
+
+.animate__animated{
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+.mycontent{
+    border: 2px solid white;
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+
+.img_me{
+    margin: 20px;
+    margin-top: 40px;
+    padding-left: 10vw;
+    /* border: 2px solid white; */
+}
+
+.aboutself{
+    margin-top: 40px;
+    padding: 10px 50px;
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: #FFFF00;
+    line-height: 50px;
+}
+
+.aboutself h3{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+}
+
+.skills{
+    color: white;
+}
+
 </style>
 {% endblock %}

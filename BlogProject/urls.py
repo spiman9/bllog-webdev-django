@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include 
-from blog.views import home_view , about_view , contact_view
+from blog.views import home_view , about_view , contact_view , loginuser , register , logoutuser
 
 
 urlpatterns = [
@@ -24,4 +24,7 @@ urlpatterns = [
     path('', home_view , name='homepage'),
     path('about/', about_view , name='aboutpage'),
     path('contact/', contact_view , name='contactpage'),
+    path('loginuser/', loginuser , name='loginuser'),
+    path('logoutuser/', logoutuser , name='logoutuser'),
+    path('register', register , name='register'),
 ]

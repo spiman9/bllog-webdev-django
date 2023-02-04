@@ -1,0 +1,87 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div class="container">
+    <div class="about">
+        <h1 class="animate__animated animate__heartBeat">About Me </h1>
+        <div class="mycontent">
+            <div class="img_me">
+                {% load static %}
+                <img src="{% static 'img/PBG.jpg' %}" alt="" width="400px">
+            </div>
+            <div class="aboutself">
+                <h3>PBG - Pritham Baswani Giryalkar <br><br>
+                ( Professional Software Engineer )</h3>
+                Programming has always been an interest in my life. I am technology enthusiast pursuing a bachelor in computer science and Engineering. I believe in the thought that the things that challenge you are the ones that improves you. I am looking forward to learning new skills that will both enrich and help me grow. I have good problem solving skills, good at coding and likes exploring the new things. I am Team-oriented personality, dedicated team player and enjoys working closely with others. With Excellent writing and verbal communication skills. Believes in the strategy of learning and applying.
+                <br><br><br>
+                <div class="skills">          
+                        <h2>Professional Skills</h2>
+                            1. C  <br>
+                            2. C++ <br>
+                            3. Java <br>
+                            4. Django <br>
+                            5. HTML <br>
+                            6. CSS <br>
+                            7. Python <br>
+                            8. Github <br>
+                            9. Git <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+
+body{
+    background-color: black;
+}
+
+.animate__animated{
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+.mycontent{
+    border: 2px solid white;
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+
+.img_me{
+    margin: 20px;
+    margin-top: 40px;
+    padding-left: 10vw;
+    /* border: 2px solid white; */
+}
+
+.aboutself{
+    margin-top: 40px;
+    padding: 10px 50px;
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: #FFFF00;
+    line-height: 50px;
+}
+
+.aboutself h3{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+}
+
+.skills{
+    color: white;
+}
+
+</style>
+{% endblock %}

@@ -1,7 +1,7 @@
 
 from email import message
-from django.urls import reverse
-from django.shortcuts import render , get_object_or_404
+from django.urls import reverse 
+from django.shortcuts import render , get_object_or_404, redirect
 
 
 # Create your views here.
@@ -9,6 +9,7 @@ from django.views.generic import (CreateView , DetailView , ListView , UpdateVie
 from .models import Article
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.contrib.auth.models import User , auth
 
 # forms import
 from .forms import ArticleModelForm
@@ -82,3 +83,34 @@ def contact_view(request , *args , **kwargs):
     context = {
     }
     return render(request , 'contact.html' , context)
+
+
+
+
+def loginuser(request):
+    if request.method == 'POST':
+        user = auth.authenticate(username = request.POST['uname'] , password = request.POST['password'])
+        if user is not None:
+            auth.login(request , user)
+            print("Loogin")
+            messages.success(request, "Successfully Login!!! " , {request.user}) 
+            return redirect("/")
+    return render(request , 'loginuser.html')
+
+def logoutuser(request):
+    auth.logout(request)
+    messages.success(request, "Logout Succesfully!!! " ) 
+    return redirect("/")
+
+def register(request):
+    if request.method == 'POST':
+        if User.objects.filter(username=request.POST['uname']).exists():
+            print("Username already exists!!!")
+        elif User.objects.filter(email = request.POST['email']).exists():
+            print("Email Already Exists !!!")
+        else:
+            u = User.objects.create_user(username = request.POST['uname'] , first_name=request.POST['fname'] , last_name = request.POST['lname'] , password=request.POST['password'] , email = request.POST['email'])
+            u.save()
+            messages.success(request, "Successfully Registered!!!" )
+        return redirect("/")
+    return render(request , 'register.html')

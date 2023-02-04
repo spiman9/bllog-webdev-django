@@ -62,7 +62,7 @@
 
   {% for message in messages %}
   <div class="container-fluid p-0 mt-1 text-center">
-    <div class="alert {{ message.tags }} alert-primary h3 alert-dismissible font-weight-bold" role="alert" >
+    <div class="alert {{ message.tags }} alert-primary h3 alert-dismissible font-weight-bold" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="True">&times;</span>
       </button>
@@ -72,6 +72,20 @@
   {% endfor %}
 
   {% block content %}
+
+
+  {% if user.is_authenticated %}
+  <ul id="rl">
+    <h3 class="listyle">Hi {{user.username}}</h3>
+    <li><a href="/logoutuser" class="listyle">logout</a></li>
+  </ul>
+  {% else %}
+  <ul id="rl">
+    <li><a href="/register" class="listyle">Register</a></li>
+    <li><a href="/loginuser" class="listyle">Login</a></li>
+  </ul>
+  {% endif %}
+
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -191,6 +205,22 @@
       font-size: 30px;
       font-weight: bold;
       margin-left: 251px;
+    }
+
+
+    #rl{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background-color: rgb(0, 255, 4);
+      height: 70px;
+      width: 100%;
+      padding-top: 10px;
+    }
+
+    .listyle{
+      color: black;
+      list-style-type: none;
     }
   </style>
 </body>

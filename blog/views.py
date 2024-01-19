@@ -102,6 +102,7 @@ def logoutuser(request):
     messages.success(request, "Logout Succesfully!!! " ) 
     return redirect("/")
 
+# This is comment added
 def register(request):
     if request.method == 'POST':
         if User.objects.filter(username=request.POST['uname']).exists():
